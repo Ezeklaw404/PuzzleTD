@@ -366,6 +366,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2384,7 +2397,98 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grey_backgrounds_b (32x32)_0: -7465806361677723147
+      Grey_backgrounds_b (32x32)_1: -7025679093996038550
+      Grey_backgrounds_b (32x32)_10: 3082335596015258943
+      Grey_backgrounds_b (32x32)_11: -5067003058843730161
+      Grey_backgrounds_b (32x32)_12: 6317495949660893550
+      Grey_backgrounds_b (32x32)_13: -1588344745060790137
+      Grey_backgrounds_b (32x32)_14: 7394868288809637144
+      Grey_backgrounds_b (32x32)_15: -6610280049243422655
+      Grey_backgrounds_b (32x32)_16: -188814343578679043
+      Grey_backgrounds_b (32x32)_17: 4891802442225553382
+      Grey_backgrounds_b (32x32)_18: 9216761193895746538
+      Grey_backgrounds_b (32x32)_19: -6079549627393324991
+      Grey_backgrounds_b (32x32)_2: -567374739654876478
+      Grey_backgrounds_b (32x32)_20: -7389999972286390689
+      Grey_backgrounds_b (32x32)_21: 360377951938819686
+      Grey_backgrounds_b (32x32)_22: 1548315324584053686
+      Grey_backgrounds_b (32x32)_23: 5455124407660539803
+      Grey_backgrounds_b (32x32)_24: 6073585854544036110
+      Grey_backgrounds_b (32x32)_25: -4709090211506084617
+      Grey_backgrounds_b (32x32)_26: 6151859458963782433
+      Grey_backgrounds_b (32x32)_27: -7520786851813238259
+      Grey_backgrounds_b (32x32)_28: -2492955636066339478
+      Grey_backgrounds_b (32x32)_29: 1036571629913315364
+      Grey_backgrounds_b (32x32)_3: 5365574074628364849
+      Grey_backgrounds_b (32x32)_30: 7471006369444825575
+      Grey_backgrounds_b (32x32)_31: 2517952333563900061
+      Grey_backgrounds_b (32x32)_32: 4119691290445987127
+      Grey_backgrounds_b (32x32)_33: -5684908559246747612
+      Grey_backgrounds_b (32x32)_34: -1880422899856088182
+      Grey_backgrounds_b (32x32)_35: -499104225687522424
+      Grey_backgrounds_b (32x32)_36: -486003666455993832
+      Grey_backgrounds_b (32x32)_37: -384376657003959112
+      Grey_backgrounds_b (32x32)_38: -7190902712439164282
+      Grey_backgrounds_b (32x32)_39: 3727353673858480950
+      Grey_backgrounds_b (32x32)_4: -1513037944680978561
+      Grey_backgrounds_b (32x32)_40: 7830271002968671900
+      Grey_backgrounds_b (32x32)_41: -133468768013017045
+      Grey_backgrounds_b (32x32)_42: 2150812384369707400
+      Grey_backgrounds_b (32x32)_43: -6440182471315421809
+      Grey_backgrounds_b (32x32)_44: 4650762313745016893
+      Grey_backgrounds_b (32x32)_45: -4796697184309046796
+      Grey_backgrounds_b (32x32)_46: 8610229878506360643
+      Grey_backgrounds_b (32x32)_47: -231411283032603322
+      Grey_backgrounds_b (32x32)_48: 4538211157203432684
+      Grey_backgrounds_b (32x32)_49: 4308475664623092670
+      Grey_backgrounds_b (32x32)_5: -4600801052015582830
+      Grey_backgrounds_b (32x32)_50: 1124687365220748540
+      Grey_backgrounds_b (32x32)_51: 2863647236825246018
+      Grey_backgrounds_b (32x32)_52: -6831409894696672574
+      Grey_backgrounds_b (32x32)_53: 3050617079936075111
+      Grey_backgrounds_b (32x32)_54: -1969994917080857961
+      Grey_backgrounds_b (32x32)_55: -7390497388547368565
+      Grey_backgrounds_b (32x32)_56: -2641266360378434571
+      Grey_backgrounds_b (32x32)_57: -8397544032242428477
+      Grey_backgrounds_b (32x32)_58: 6589658697772418487
+      Grey_backgrounds_b (32x32)_59: -8318645907478856422
+      Grey_backgrounds_b (32x32)_6: -2646627995480299699
+      Grey_backgrounds_b (32x32)_60: 1538501929945860544
+      Grey_backgrounds_b (32x32)_61: -1858436422095124379
+      Grey_backgrounds_b (32x32)_62: -2380000067583467655
+      Grey_backgrounds_b (32x32)_63: 6240214627557344538
+      Grey_backgrounds_b (32x32)_64: 1309831886869463796
+      Grey_backgrounds_b (32x32)_65: 9010041436181380261
+      Grey_backgrounds_b (32x32)_66: -3190777485485325676
+      Grey_backgrounds_b (32x32)_67: -6872399625826105832
+      Grey_backgrounds_b (32x32)_68: -2295792489319492244
+      Grey_backgrounds_b (32x32)_69: -8924663489488245064
+      Grey_backgrounds_b (32x32)_7: 1286467988037713581
+      Grey_backgrounds_b (32x32)_70: 4955455191242965206
+      Grey_backgrounds_b (32x32)_71: -5877443112033193484
+      Grey_backgrounds_b (32x32)_72: 8347839296399925690
+      Grey_backgrounds_b (32x32)_73: 4319877254446494379
+      Grey_backgrounds_b (32x32)_74: 3190697237089472376
+      Grey_backgrounds_b (32x32)_75: -8484885027641573603
+      Grey_backgrounds_b (32x32)_76: -8389029218100690961
+      Grey_backgrounds_b (32x32)_77: -3986787270825036951
+      Grey_backgrounds_b (32x32)_78: -7038332695195114053
+      Grey_backgrounds_b (32x32)_79: -6658534504601465848
+      Grey_backgrounds_b (32x32)_8: -7647247555644730503
+      Grey_backgrounds_b (32x32)_80: 8966160062414373808
+      Grey_backgrounds_b (32x32)_81: -8005017862358098931
+      Grey_backgrounds_b (32x32)_82: 722764848994404961
+      Grey_backgrounds_b (32x32)_83: 5024862799040813521
+      Grey_backgrounds_b (32x32)_84: 7354243678479008698
+      Grey_backgrounds_b (32x32)_85: -201992134891509979
+      Grey_backgrounds_b (32x32)_86: -2978573151666124760
+      Grey_backgrounds_b (32x32)_87: -9096235377055549639
+      Grey_backgrounds_b (32x32)_88: 1566590256200859285
+      Grey_backgrounds_b (32x32)_89: -5553702493768673787
+      Grey_backgrounds_b (32x32)_9: 1490635024762151176
+      Grey_backgrounds_b (32x32)_90: 5048480808479701383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

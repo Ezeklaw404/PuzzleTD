@@ -366,6 +366,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2384,7 +2397,98 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      black_background_sb (32x32)_0: 4803243898104128374
+      black_background_sb (32x32)_1: 1726197771696445110
+      black_background_sb (32x32)_10: 1379140501235494785
+      black_background_sb (32x32)_11: -6522481051971905232
+      black_background_sb (32x32)_12: 3233911859833155289
+      black_background_sb (32x32)_13: 293969772729126781
+      black_background_sb (32x32)_14: 6035175457499038793
+      black_background_sb (32x32)_15: 1083178791156868490
+      black_background_sb (32x32)_16: 1275616388896968669
+      black_background_sb (32x32)_17: -8184731972110758952
+      black_background_sb (32x32)_18: 5905246761770192244
+      black_background_sb (32x32)_19: 2567174225477438846
+      black_background_sb (32x32)_2: 3183444067943773037
+      black_background_sb (32x32)_20: 5088064368722850193
+      black_background_sb (32x32)_21: -8249284144241793989
+      black_background_sb (32x32)_22: -7681749451836271610
+      black_background_sb (32x32)_23: 4468513292571724271
+      black_background_sb (32x32)_24: -7511391913480096379
+      black_background_sb (32x32)_25: -6635453539706035816
+      black_background_sb (32x32)_26: -8472739906735071323
+      black_background_sb (32x32)_27: 1021403005027345661
+      black_background_sb (32x32)_28: 2582233649480765571
+      black_background_sb (32x32)_29: 2651583098423120201
+      black_background_sb (32x32)_3: -2751360696285133536
+      black_background_sb (32x32)_30: 2932891343983859724
+      black_background_sb (32x32)_31: -4061863307254049344
+      black_background_sb (32x32)_32: 3418113115573752719
+      black_background_sb (32x32)_33: 4507398233077392802
+      black_background_sb (32x32)_34: -8295920137224298395
+      black_background_sb (32x32)_35: 4982985634002158160
+      black_background_sb (32x32)_36: 4869640682132829481
+      black_background_sb (32x32)_37: 237111067055663188
+      black_background_sb (32x32)_38: 771601900675856472
+      black_background_sb (32x32)_39: 3209670173716827909
+      black_background_sb (32x32)_4: 2725385695615826479
+      black_background_sb (32x32)_40: 1170397976409285903
+      black_background_sb (32x32)_41: -7953557958439212081
+      black_background_sb (32x32)_42: 3540460343637509020
+      black_background_sb (32x32)_43: -1991563423820559722
+      black_background_sb (32x32)_44: 1066480438579740661
+      black_background_sb (32x32)_45: 3896371499884540751
+      black_background_sb (32x32)_46: -3557105966657039076
+      black_background_sb (32x32)_47: 2333528428812184042
+      black_background_sb (32x32)_48: -5022509353247554210
+      black_background_sb (32x32)_49: -1613486743063618741
+      black_background_sb (32x32)_5: -6356251191056784027
+      black_background_sb (32x32)_50: -7763300696604542421
+      black_background_sb (32x32)_51: 1339499188000063969
+      black_background_sb (32x32)_52: -514098776371995886
+      black_background_sb (32x32)_53: -2018278230496110053
+      black_background_sb (32x32)_54: 5061840974582944008
+      black_background_sb (32x32)_55: -216284677069355313
+      black_background_sb (32x32)_56: -33782483676264227
+      black_background_sb (32x32)_57: 4137407003611085178
+      black_background_sb (32x32)_58: 2765212923628523894
+      black_background_sb (32x32)_59: -6796281907970853113
+      black_background_sb (32x32)_6: 3706364533057116694
+      black_background_sb (32x32)_60: 3904481877262533087
+      black_background_sb (32x32)_61: -8442752362434706865
+      black_background_sb (32x32)_62: -2371525862158331497
+      black_background_sb (32x32)_63: -3759829036509850483
+      black_background_sb (32x32)_64: 8697650540369428317
+      black_background_sb (32x32)_65: 7602850950920020420
+      black_background_sb (32x32)_66: 2954073571550567368
+      black_background_sb (32x32)_67: -440108695574601010
+      black_background_sb (32x32)_68: 5698116973469149973
+      black_background_sb (32x32)_69: 3028570289597841757
+      black_background_sb (32x32)_7: -7977266995031959313
+      black_background_sb (32x32)_70: -1133687471751830593
+      black_background_sb (32x32)_71: -4064165169411433942
+      black_background_sb (32x32)_72: -2778540791074435061
+      black_background_sb (32x32)_73: 2843838383696595519
+      black_background_sb (32x32)_74: -6488140831610144422
+      black_background_sb (32x32)_75: 2555776999634155960
+      black_background_sb (32x32)_76: -4327057726255718319
+      black_background_sb (32x32)_77: 335769466963270110
+      black_background_sb (32x32)_78: 732147243187388863
+      black_background_sb (32x32)_79: -7459509232885574041
+      black_background_sb (32x32)_8: 909044491926645379
+      black_background_sb (32x32)_80: -5235576154673965653
+      black_background_sb (32x32)_81: -4643934800922630012
+      black_background_sb (32x32)_82: -4566314952498293372
+      black_background_sb (32x32)_83: 486755824066004985
+      black_background_sb (32x32)_84: -8020898329378084379
+      black_background_sb (32x32)_85: 1443166093873711066
+      black_background_sb (32x32)_86: 3483428756467814137
+      black_background_sb (32x32)_87: -7990163630555567282
+      black_background_sb (32x32)_88: -7791660115247885736
+      black_background_sb (32x32)_89: -8430818483830080640
+      black_background_sb (32x32)_9: 3562994632694275707
+      black_background_sb (32x32)_90: 1240124097727460373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

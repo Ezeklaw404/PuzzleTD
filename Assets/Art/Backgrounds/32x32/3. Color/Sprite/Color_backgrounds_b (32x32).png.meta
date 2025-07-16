@@ -366,6 +366,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2384,7 +2397,98 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Color_backgrounds_b (32x32)_0: 1814910386695882889
+      Color_backgrounds_b (32x32)_1: 7404943956381160690
+      Color_backgrounds_b (32x32)_10: -8776947272048852538
+      Color_backgrounds_b (32x32)_11: -7284412795874002534
+      Color_backgrounds_b (32x32)_12: -4305107483767703511
+      Color_backgrounds_b (32x32)_13: 153143238881985093
+      Color_backgrounds_b (32x32)_14: -2506914559173123153
+      Color_backgrounds_b (32x32)_15: 3713994234012657153
+      Color_backgrounds_b (32x32)_16: 1478809800335918859
+      Color_backgrounds_b (32x32)_17: -1699825393981888601
+      Color_backgrounds_b (32x32)_18: 1087439916114230393
+      Color_backgrounds_b (32x32)_19: -2010297234023147255
+      Color_backgrounds_b (32x32)_2: 5849031124733285850
+      Color_backgrounds_b (32x32)_20: 1972880224452931231
+      Color_backgrounds_b (32x32)_21: 3732499710344981952
+      Color_backgrounds_b (32x32)_22: -1350653601565495261
+      Color_backgrounds_b (32x32)_23: -5075684271598721682
+      Color_backgrounds_b (32x32)_24: 666666227216131891
+      Color_backgrounds_b (32x32)_25: 6750121048093475112
+      Color_backgrounds_b (32x32)_26: -3739754125352462478
+      Color_backgrounds_b (32x32)_27: -2855531708898018068
+      Color_backgrounds_b (32x32)_28: -9047929613030489378
+      Color_backgrounds_b (32x32)_29: -1924673558723130406
+      Color_backgrounds_b (32x32)_3: -8383932733739647962
+      Color_backgrounds_b (32x32)_30: -3537497889536661771
+      Color_backgrounds_b (32x32)_31: 509065380793672440
+      Color_backgrounds_b (32x32)_32: -4731243503105982266
+      Color_backgrounds_b (32x32)_33: 8850380563113742752
+      Color_backgrounds_b (32x32)_34: -5937701525211003002
+      Color_backgrounds_b (32x32)_35: 2692896390126797266
+      Color_backgrounds_b (32x32)_36: -4645451039620387214
+      Color_backgrounds_b (32x32)_37: 2279380935492823697
+      Color_backgrounds_b (32x32)_38: -4382570197438084636
+      Color_backgrounds_b (32x32)_39: 4085865277867992916
+      Color_backgrounds_b (32x32)_4: -3975861148466887256
+      Color_backgrounds_b (32x32)_40: -5830352792777296599
+      Color_backgrounds_b (32x32)_41: 5704756264379259402
+      Color_backgrounds_b (32x32)_42: -3009617810486885396
+      Color_backgrounds_b (32x32)_43: -1399422809738758602
+      Color_backgrounds_b (32x32)_44: -4032831695379975451
+      Color_backgrounds_b (32x32)_45: 520133938364490845
+      Color_backgrounds_b (32x32)_46: 4481437189374511151
+      Color_backgrounds_b (32x32)_47: 2703288370071274471
+      Color_backgrounds_b (32x32)_48: 3941644842392107889
+      Color_backgrounds_b (32x32)_49: -4047125677965679755
+      Color_backgrounds_b (32x32)_5: 5722024813627441639
+      Color_backgrounds_b (32x32)_50: -4649136877712433038
+      Color_backgrounds_b (32x32)_51: 7573078190206679722
+      Color_backgrounds_b (32x32)_52: -4007961847069573133
+      Color_backgrounds_b (32x32)_53: 5292554204484780418
+      Color_backgrounds_b (32x32)_54: 7239686603920365823
+      Color_backgrounds_b (32x32)_55: 9047207905822965198
+      Color_backgrounds_b (32x32)_56: 6693690255059145579
+      Color_backgrounds_b (32x32)_57: -8366340904642663981
+      Color_backgrounds_b (32x32)_58: 7448469977144800494
+      Color_backgrounds_b (32x32)_59: -3736697179270528211
+      Color_backgrounds_b (32x32)_6: 7050868935590469114
+      Color_backgrounds_b (32x32)_60: 2436779460141438842
+      Color_backgrounds_b (32x32)_61: 6846380358961216802
+      Color_backgrounds_b (32x32)_62: -7494642147093308105
+      Color_backgrounds_b (32x32)_63: 1136988425156782333
+      Color_backgrounds_b (32x32)_64: -8059603534745878975
+      Color_backgrounds_b (32x32)_65: 5660107810324273894
+      Color_backgrounds_b (32x32)_66: 1924587099205942966
+      Color_backgrounds_b (32x32)_67: 169428588590680248
+      Color_backgrounds_b (32x32)_68: -4902547941564121842
+      Color_backgrounds_b (32x32)_69: -493074393148094002
+      Color_backgrounds_b (32x32)_7: -5998989726522100368
+      Color_backgrounds_b (32x32)_70: 1910231288482875805
+      Color_backgrounds_b (32x32)_71: 8531278427948907147
+      Color_backgrounds_b (32x32)_72: 6784464910371266543
+      Color_backgrounds_b (32x32)_73: -9983264205286438
+      Color_backgrounds_b (32x32)_74: 4721437056970092772
+      Color_backgrounds_b (32x32)_75: 7091742631704317857
+      Color_backgrounds_b (32x32)_76: -4195762506982230232
+      Color_backgrounds_b (32x32)_77: 1876924464010013211
+      Color_backgrounds_b (32x32)_78: 3226481941960177975
+      Color_backgrounds_b (32x32)_79: -8875104909883234959
+      Color_backgrounds_b (32x32)_8: 1997611283343045738
+      Color_backgrounds_b (32x32)_80: -2178734893408062811
+      Color_backgrounds_b (32x32)_81: -5261718888080924486
+      Color_backgrounds_b (32x32)_82: 2396895132212565838
+      Color_backgrounds_b (32x32)_83: 6985648787664584279
+      Color_backgrounds_b (32x32)_84: 4654466963520845295
+      Color_backgrounds_b (32x32)_85: -8627709101249176880
+      Color_backgrounds_b (32x32)_86: 7872858999699345408
+      Color_backgrounds_b (32x32)_87: -4308158313109934692
+      Color_backgrounds_b (32x32)_88: -702152097862931421
+      Color_backgrounds_b (32x32)_89: 5794763633886748691
+      Color_backgrounds_b (32x32)_9: -3885141153920425057
+      Color_backgrounds_b (32x32)_90: -4547496617033524754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
