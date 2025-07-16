@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -138,9 +138,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 15
-        width: 64
-        height: 65
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: decor_16x16_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
-        width: 7
-        height: 6
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: decor_16x16_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 13
-        height: 12
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: decor_16x16_3
       rect:
         serializedVersion: 2
-        x: 18
-        y: 7
-        width: 8
-        height: 7
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,89 +222,89 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_16x16_4
+      name: decor_16x16_16
       rect:
         serializedVersion: 2
-        x: 21
-        y: 3
-        width: 11
-        height: 8
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5b7a0c18214c79470800000000000000
-      internalID: 8401399213648291765
+      spriteID: bcb67a5b4d34da94abc4fef2b35ec22b
+      internalID: -760098150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_16x16_5
+      name: decor_16x16_17
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
-        width: 13
-        height: 10
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aa78a8ea33d9d9f60800000000000000
-      internalID: 8042757354850781098
+      spriteID: aac0b0dbf0f998d4787d969a8efacad8
+      internalID: -428151394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_16x16_6
+      name: decor_16x16_18
       rect:
         serializedVersion: 2
-        x: 49
-        y: 1
-        width: 10
-        height: 8
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e43f9226d6a144320800000000000000
-      internalID: 2541185146844476238
+      spriteID: 5842eee0a2039204390cc9901d4699ec
+      internalID: -524114019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_16x16_7
+      name: decor_16x16_19
       rect:
         serializedVersion: 2
-        x: 56
-        y: 6
-        width: 8
-        height: 7
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2e27dab5a85b56e30800000000000000
-      internalID: 4496199408847516386
+      spriteID: 5495a8a3dd6f0764caa3518f7ea08f98
+      internalID: 1576501607
       vertices: []
       indices: 
       edges: []
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5a2d59338074b4b46a1a25f0d357d507
     internalID: 0
     vertices: []
     indices: 
@@ -325,12 +325,24 @@ TextureImporter:
     nameFileIdTable:
       decor_16x16_0: -2061284315431252709
       decor_16x16_1: -3212286273555906102
+      decor_16x16_10: 1544596861
+      decor_16x16_11: -1168857425
+      decor_16x16_12: 1572361793
+      decor_16x16_13: 1533713930
+      decor_16x16_14: -1672790329
+      decor_16x16_15: -68725684
+      decor_16x16_16: -760098150
+      decor_16x16_17: -428151394
+      decor_16x16_18: -524114019
+      decor_16x16_19: 1576501607
       decor_16x16_2: 1182821835117424558
       decor_16x16_3: 9072027579460667051
       decor_16x16_4: 8401399213648291765
       decor_16x16_5: 8042757354850781098
       decor_16x16_6: 2541185146844476238
       decor_16x16_7: 4496199408847516386
+      decor_16x16_8: 334756411
+      decor_16x16_9: -509758200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
