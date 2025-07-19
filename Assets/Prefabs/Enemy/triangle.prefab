@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8854390092656907716}
   - component: {fileID: 2205395806822751950}
-  - component: {fileID: 4916315523653487645}
+  - component: {fileID: -810489818673715422}
   m_Layer: 0
   m_Name: triangle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5082026461966343123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.807, y: -1.367, z: 0}
+  m_LocalPosition: {x: -3.816, y: -1.375, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -500102071
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7105913188517789750, guid: 3bf092876dbe6614ea9b2ac7a362a12c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4916315523653487645
+--- !u!114 &-810489818673715422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,20 +97,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5082026461966343123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d25fbb8313aa14ab50df6f0f07afd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a92db6252eef47b7a6ce2a960c862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  health: 0
   moveSpeed: 2
+  waypoints: []
