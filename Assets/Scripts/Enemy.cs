@@ -2,17 +2,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private double health;
+    [SerializeField] public double health;
     [SerializeField] private float moveSpeed = 1;
 
     [SerializeField]
     public Transform[] waypoints;
-    private int waypointIndex = 0;
+    public int waypointIndex = 0;
 
 
     public void InitPath(Transform[] path) {
         waypoints = path;
         waypointIndex = 0;
+    }
+
+    public void TakeDamage(double damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
