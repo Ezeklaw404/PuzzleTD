@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1830985046670534475}
   - component: {fileID: 8849354323143529658}
   - component: {fileID: 534179552903228314}
+  - component: {fileID: 5167044814025343806}
   m_Layer: 0
   m_Name: diamond
   m_TagString: Enemy
@@ -100,6 +101,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0a92db6252eef47b7a6ce2a960c862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 8
   moveSpeed: 1.5
   waypoints: []
+--- !u!70 &5167044814025343806
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939688240952419672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.17, y: 1.28}
+  m_Direction: 0

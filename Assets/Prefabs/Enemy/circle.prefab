@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 233974222842231344}
   - component: {fileID: 5489999231262958507}
   - component: {fileID: 7217870789239235527}
+  - component: {fileID: -6384693690770754426}
   m_Layer: 0
   m_Name: circle
   m_TagString: Enemy
@@ -100,6 +101,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0a92db6252eef47b7a6ce2a960c862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 15
   moveSpeed: 1.25
   waypoints: []
+--- !u!70 &-6384693690770754426
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917505499455317916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.2, y: 1.2}
+  m_Direction: 0
