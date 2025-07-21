@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-
         Move();
     }
 
@@ -49,6 +48,11 @@ public class Enemy : MonoBehaviour
             {
                 waypointIndex += 1;
             }
+        } else
+        {
+            Destroy(this);
+            //TODO deal dmg to health
         }
+
     }
 }
