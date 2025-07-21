@@ -13733,7 +13733,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 1759107370}
-  - {fileID: 0}
   - {fileID: 269778522}
   - {fileID: 44105555}
   - {fileID: 1278751932}
@@ -13741,8 +13740,6 @@ MonoBehaviour:
   - {fileID: 2107500409}
   - {fileID: 1626719355}
   - {fileID: 311065474}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 1032446107}
 --- !u!1 &1278751931
 GameObject:
@@ -13978,7 +13975,7 @@ Transform:
   m_GameObject: {fileID: 1759107369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.54, y: 1.46, z: 0}
+  m_LocalPosition: {x: -2.5, y: 1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
