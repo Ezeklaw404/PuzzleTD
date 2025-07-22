@@ -17,6 +17,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectLevel.unity
     guid: 4e75a804f34059f4baa94c151bac1496
+  - enabled: 1
+    path: Assets/Scenes/Levels/Spectacles.unity
+    guid: 968ef982bf9ca174c96c9809c846f2f7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Straight Shot.unity
+    guid: 37f5732dccc5f1c45bbb1e7ea3e36164
+  - enabled: 1
+    path: Assets/Scenes/Levels/TheCircle.unity
+    guid: 1bcc060a4a1fd4d4fb2c3f26ecd18386
+  - enabled: 1
+    path: Assets/Scenes/Levels/Wasteland.unity
+    guid: 9ccf17fb689951a4196f4500bf67bdf0
+  - enabled: 1
+    path: Assets/Scenes/Levels/WindingPath.unity
+    guid: 285173d17d20bce4fad3eba6dea33d62
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
