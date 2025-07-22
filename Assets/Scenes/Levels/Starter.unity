@@ -12590,7 +12590,7 @@ GameObject:
   - component: {fileID: 1941171224}
   - component: {fileID: 1941171223}
   - component: {fileID: 1941171222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shapes_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12614,6 +12614,9 @@ MonoBehaviour:
   fireRate: 50
   damage: 50
   targetCount: 1
+  beamMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  beamWidth: 0.03
+  beamDuration: 0.12
 --- !u!212 &1941171223
 SpriteRenderer:
   m_ObjectHideFlags: 0
