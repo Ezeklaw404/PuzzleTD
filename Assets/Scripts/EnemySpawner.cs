@@ -23,6 +23,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        if (waveNumber >= waves.Count)
+            return;
+
         waves[waveNumber].spawnTimer += Time.deltaTime;
         if (waves[waveNumber].totalWaveWeight > waves[waveNumber].currentWaveWeight)
         {
@@ -35,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         } else
         {
 
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0 && waveNumber <= waves.Count -1)
             {
                 waveNumber++;
             }

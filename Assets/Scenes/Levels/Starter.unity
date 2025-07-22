@@ -12090,12 +12090,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d5980d7a216f0488c7f1b2a45437eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
-  spawnTimer: 0
-  spawnInterval: 1
-  enemyPerWave: 20
-  enemyCount: 0
   path: {fileID: 1054098714}
+  waves:
+  - enemyPrefabs:
+    - {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    currentWaveWeight: 0
+    totalWaveWeight: 2
+    enemyCount: 0
+  waveNumber: 0
 --- !u!1001 &1803100792
 PrefabInstance:
   m_ObjectHideFlags: 0
