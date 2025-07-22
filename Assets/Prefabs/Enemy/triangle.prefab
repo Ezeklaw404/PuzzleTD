@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -810489818673715422}
   - component: {fileID: -1465241445636294893}
   - component: {fileID: 7743809343676614834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: triangle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -151,11 +151,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5082026461966343123}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0

@@ -13923,7 +13923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d5980d7a216f0488c7f1b2a45437eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+  enemyPrefab: {fileID: 5082026461966343123, guid: d8ff8573a4b4d594789da52ec71b0270, type: 3}
   spawnTimer: 0
   spawnInterval: 1
   enemyPerWave: 20
