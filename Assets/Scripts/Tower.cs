@@ -130,28 +130,36 @@ public class Tower : MonoBehaviour
 
     private IEnumerator DrawBeam(Vector3 from, Vector3 to)
     {
-        // 1) create a GameObject just for this beam
         GameObject go = new GameObject("Beam");
         var lr = go.AddComponent<LineRenderer>();
 
-        // 2) configure its look
         lr.positionCount = 2;
-        lr.material = beamMaterial;
+        lr.material = new Material(beamMaterial);
         lr.startWidth = beamWidth;
         lr.endWidth = beamWidth;
         lr.useWorldSpace = true;
 
-        // 3) set the two endpoints
         lr.SetPosition(0, from);
         lr.SetPosition(1, to);
 
-        // 4) optionally tweak sorting/order, e.g.:
-        //    lr.sortingLayerName = "Projectiles";
-        //    lr.sortingOrder     = 5;
         lr.sortingLayerName = "Foreground";
 
-        // 5) wait, then clean up
-        yield return new WaitForSeconds(beamDuration);
+        float elapsed = 0f;
+        Color baseColor = lr.material.color;
+        while (elapsed < beamDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / beamDuration);
+
+            float a = Mathf.Lerp(1f, 0f, t);
+            Color c = new Color(baseColor.r, baseColor.g, baseColor.b, a);
+            lr.startColor = c;
+            lr.endColor = c;
+
+            yield return null;
+        }
+
         Destroy(go);
     }
+
 }
