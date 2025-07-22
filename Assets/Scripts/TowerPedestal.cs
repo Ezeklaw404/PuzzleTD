@@ -40,7 +40,7 @@ public class TowerPedestal : MonoBehaviour, IPointerClickHandler
         // instantiate the chosen tower at our position
         currentTower = Instantiate(
             towerPrefab,
-            transform.position,
+            transform.position + new Vector3(0, 0.035f, 0),
             Quaternion.identity,
             transform   // parent to pedestal if you like
         );

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static System.Net.Mime.MediaTypeNames;
 
 public class TowerSelectionUI : MonoBehaviour
@@ -13,19 +14,28 @@ public class TowerSelectionUI : MonoBehaviour
     [SerializeField] private Button buttonPrefab;
 
     private Action<GameObject> onSelected;
-
     /// <summary>
     /// Call this to initialize the menu.
     /// </summary>
     public void Show(List<GameObject> towerOptions, Action<GameObject> onSelectedCallback)
     {
+        Debug.Log($"[TowerSelectionUI] Show() called – towerOptions.Count = {towerOptions?.Count}");
+
         onSelected = onSelectedCallback;
 
         // create one button per tower prefab
         foreach (var prefab in towerOptions)
         {
             var btn = Instantiate(buttonPrefab, buttonContainer);
-            btn.GetComponentInChildren<UnityEngine.UI.Text>().text = prefab.name;
+            var txt = btn.GetComponentInChildren<TextMeshProUGUI>();
+            if (txt == null)
+            {
+                Debug.LogError("No TMP text component found on buttonPrefab!");
+            }
+            else
+            {
+                txt.text = prefab.name;
+            }
             btn.onClick.AddListener(() => Select(prefab));
         }
     }
