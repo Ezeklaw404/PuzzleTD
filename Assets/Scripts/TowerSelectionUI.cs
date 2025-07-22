@@ -35,6 +35,17 @@ public class TowerSelectionUI : MonoBehaviour
             else
             {
                 txt.text = prefab.name;
+
+                // force the layout to rebuild so LayoutUtility can read the new preferred size
+                LayoutRebuilder.ForceRebuildLayoutImmediate(txt.rectTransform);
+
+                float textWidth = LayoutUtility.GetPreferredSize(txt.rectTransform, 0);
+                float padding = 20f;  // pick whatever horizontal padding you want
+                RectTransform btnRT = btn.GetComponent<RectTransform>();
+                btnRT.SetSizeWithCurrentAnchors(
+                    RectTransform.Axis.Horizontal,
+                    textWidth + padding
+                );
             }
             btn.onClick.AddListener(() => Select(prefab));
         }
