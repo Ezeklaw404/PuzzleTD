@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Tower
+  - TrackEnd
   layers:
   - Default
   - TransparentFX

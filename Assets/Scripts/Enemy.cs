@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public Transform[] waypoints;
     public int waypointIndex = 0;
 
+    
+
 
     public void InitPath(Transform[] path) {
         waypoints = path;
@@ -57,11 +59,14 @@ public class Enemy : MonoBehaviour
             {
                 waypointIndex += 1;
             }
-        } else
-        {
-            Destroy(this);
-            //TODO deal dmg to health
         }
+    }
 
+    void OnCollisionStay2D(Collision2D collision) 
+    {
+        if (collision.gameObject.CompareTag("TrackEnd"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
