@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3351159065452108733, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+      propertyPath: difficultyWeight
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: m_Name
       value: bigSquare

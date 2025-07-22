@@ -11840,12 +11840,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d5980d7a216f0488c7f1b2a45437eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5082026461966343123, guid: d8ff8573a4b4d594789da52ec71b0270, type: 3}
-  spawnTimer: 0
-  spawnInterval: 1
-  enemyPerWave: 20
-  enemyCount: 0
   path: {fileID: 1054098714}
+  waves:
+  - enemyPrefabs:
+    - {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+    - {fileID: 5082026461966343123, guid: d8ff8573a4b4d594789da52ec71b0270, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1
+    currentWaveWeight: 0
+    totalWaveWeight: 13
+    enemyCount: 0
+  - enemyPrefabs:
+    - {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+    - {fileID: 5082026461966343123, guid: d8ff8573a4b4d594789da52ec71b0270, type: 3}
+    - {fileID: 6939688240952419672, guid: 821ee7c1523cccf4d8579f89d07e52f0, type: 3}
+    - {fileID: 5917505499455317916, guid: 730987cc3bc4d6343b6abe6c3f5f14c2, type: 3}
+    - {fileID: 8846208906025915203, guid: 4b84c519e4576f34c904aa5fc6561982, type: 3}
+    spawnTimer: 0
+    spawnInterval: 1
+    currentWaveWeight: 0
+    totalWaveWeight: 100
+    enemyCount: 0
+  waveNumber: 0
 --- !u!1001 &2034454872
 PrefabInstance:
   m_ObjectHideFlags: 0

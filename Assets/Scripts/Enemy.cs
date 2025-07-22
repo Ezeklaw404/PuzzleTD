@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] public double health;
     [SerializeField] private float moveSpeed = 1;
+    [SerializeField] public int difficultyWeight = 1;
 
     [SerializeField]
     public Transform[] waypoints;
@@ -28,7 +29,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
     }
 
