@@ -149,5 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefabs:
   - {fileID: 1016055333023864168, guid: 2a24a542904b20248a839b664b10b9a6, type: 3}
-  - {fileID: 1016055333023864168, guid: 6dcdd3bb9f950f14cb66518642c3469c, type: 3}
+  - {fileID: 1016055333023864168, guid: a5cc359d1f9b5184c8665a1f7427c263, type: 3}
+  - {fileID: 1016055333023864168, guid: ad72ae16a9f40b248bb55ae0a53feb71, type: 3}
+  - {fileID: 1016055333023864168, guid: 76529595172be094a85e8335f8eba082, type: 3}
+  - {fileID: 1016055333023864168, guid: 69a8900aefd25bd4991f33b004f41514, type: 3}
+  - {fileID: 1016055333023864168, guid: b1c96eff25429714daaaa05d8aee42a2, type: 3}
   towerSelectionUIPrefab: {fileID: 1459910725306429218, guid: f8fba3922b0671a49a6fd74ff462c31a, type: 3}
