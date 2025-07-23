@@ -66,6 +66,12 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrackEnd"))
         {
+            if (Player.Instance != null)
+            {
+                int dmg = difficultyWeight / 2;
+                if (dmg < 1) dmg = 1;
+                Player.Instance.Yeouch(dmg);
+            }
             Destroy(gameObject);
         }
     }
