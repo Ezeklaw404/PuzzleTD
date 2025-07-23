@@ -16,7 +16,16 @@ public class Tower : MonoBehaviour
         LeastProgressed
     }
 
+    public enum Attribute
+    {
+        basic,
+        slow,
+        accelerator,
+        uplink
+    }
+
     [SerializeField] private TargetPriority priority;
+    [SerializeField] private Attribute attribute;
     [SerializeField] private float range;
     [Tooltip("Shots per minute")]
     [SerializeField] private double fireRate;
@@ -29,6 +38,7 @@ public class Tower : MonoBehaviour
     private CircleCollider2D rangeCollider;
     private List<Collider2D> targetsInRange = new();
     private float fireCooldown = 0f;
+    private HashSet<Enemy> slowedEnemies = new();
 
     void Start()
     {
@@ -121,7 +131,27 @@ public class Tower : MonoBehaviour
             var enemy = enemyCollider.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                switch (attribute)
+                {
+                    case Attribute.basic:
+                        enemy.TakeDamage(damage);
+                        break;
+
+                    case Attribute.slow:
+                        enemy.TakeDamage(damage);
+                        if (!slowedEnemies.Contains(enemy))
+                        {
+                            enemy.moveSpeed *= 0.7f;
+                            slowedEnemies.Add(enemy);
+                        }
+                        break;
+
+                    case Attribute.accelerator:
+                        break;
+
+                    case Attribute.uplink:
+                        break;
+                }
 
                 StartCoroutine(DrawBeam(transform.position, enemyCollider.transform.position));
             }
