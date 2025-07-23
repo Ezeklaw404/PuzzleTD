@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public double health;
-    [SerializeField] private float moveSpeed = 1;
+    [SerializeField] public float moveSpeed = 1;
     [SerializeField] public int difficultyWeight = 1;
 
     [SerializeField]
@@ -66,6 +66,12 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrackEnd"))
         {
+            if (Player.Instance != null)
+            {
+                int dmg = difficultyWeight / 2;
+                if (dmg < 1) dmg = 1;
+                Player.Instance.Yeouch(dmg);
+            }
             Destroy(gameObject);
         }
     }

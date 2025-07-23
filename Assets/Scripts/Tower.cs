@@ -16,7 +16,16 @@ public class Tower : MonoBehaviour
         LeastProgressed
     }
 
+    public enum Attribute
+    {
+        basic,
+        slow,
+        accelerator,
+        uplink
+    }
+
     [SerializeField] private TargetPriority priority;
+    [SerializeField] private Attribute attribute;
     [SerializeField] private float range;
     [Tooltip("Shots per minute")]
     [SerializeField] private double fireRate;
@@ -29,12 +38,19 @@ public class Tower : MonoBehaviour
     private CircleCollider2D rangeCollider;
     private List<Collider2D> targetsInRange = new();
     private float fireCooldown = 0f;
+    private HashSet<Enemy> slowedEnemies = new();
+    private float accelRampRate = 0.65f;
+    private float accelDecayRate = 2.6f;
+    private float minAccelMultiplier = 0.7f;
+    private float maxAccelMultiplier = 2f;
+    private float currentAccelMultiplier;
 
     void Start()
     {
         rangeCollider = gameObject.AddComponent<CircleCollider2D>();
         rangeCollider.isTrigger = true;
         rangeCollider.radius = range;
+        currentAccelMultiplier = minAccelMultiplier;
     }
 
     void Update()
@@ -45,6 +61,22 @@ public class Tower : MonoBehaviour
         );
 
         targetsInRange.RemoveAll(c => c == null || !c.CompareTag("Enemy"));
+
+        if (attribute == Attribute.accelerator)
+        {
+            float target = targetsInRange.Count > 0
+                ? maxAccelMultiplier
+                : minAccelMultiplier;
+            float rate = targetsInRange.Count > 0
+                ? accelRampRate
+                : accelDecayRate;
+
+            currentAccelMultiplier = Mathf.MoveTowards(
+                currentAccelMultiplier,
+                target,
+                rate * Time.deltaTime
+            );
+        }
 
         if (targetsInRange.Count > 0)
         {
@@ -121,7 +153,32 @@ public class Tower : MonoBehaviour
             var enemy = enemyCollider.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                switch (attribute)
+                {
+                    case Attribute.basic:
+                        enemy.TakeDamage(damage);
+                        break;
+
+                    case Attribute.slow:
+                        enemy.TakeDamage(damage);
+                        if (!slowedEnemies.Contains(enemy))
+                        {
+                            enemy.moveSpeed *= 0.7f;
+                            slowedEnemies.Add(enemy);
+                        }
+                        break;
+
+                    case Attribute.accelerator:
+                        double finalDamage = damage * currentAccelMultiplier;
+                        enemy.TakeDamage(finalDamage);
+                        break;
+
+                    case Attribute.uplink:
+                        enemy.TakeDamage(damage);
+                        enemy.TakeDamage(damage);
+                        enemy.TakeDamage(damage);
+                        break;
+                }
 
                 StartCoroutine(DrawBeam(transform.position, enemyCollider.transform.position));
             }
