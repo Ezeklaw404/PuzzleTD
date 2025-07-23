@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Spectacles.unity
     guid: 968ef982bf9ca174c96c9809c846f2f7
   - enabled: 1
-    path: Assets/Scenes/Levels/Straight Shot.unity
+    path: Assets/Scenes/Levels/StraightShot.unity
     guid: 37f5732dccc5f1c45bbb1e7ea3e36164
   - enabled: 1
     path: Assets/Scenes/Levels/TheCircle.unity
