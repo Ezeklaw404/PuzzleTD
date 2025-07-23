@@ -39,12 +39,18 @@ public class Tower : MonoBehaviour
     private List<Collider2D> targetsInRange = new();
     private float fireCooldown = 0f;
     private HashSet<Enemy> slowedEnemies = new();
+    private float accelRampRate = 0.65f;
+    private float accelDecayRate = 2.6f;
+    private float minAccelMultiplier = 0.7f;
+    private float maxAccelMultiplier = 2f;
+    private float currentAccelMultiplier;
 
     void Start()
     {
         rangeCollider = gameObject.AddComponent<CircleCollider2D>();
         rangeCollider.isTrigger = true;
         rangeCollider.radius = range;
+        currentAccelMultiplier = minAccelMultiplier;
     }
 
     void Update()
@@ -55,6 +61,22 @@ public class Tower : MonoBehaviour
         );
 
         targetsInRange.RemoveAll(c => c == null || !c.CompareTag("Enemy"));
+
+        if (attribute == Attribute.accelerator)
+        {
+            float target = targetsInRange.Count > 0
+                ? maxAccelMultiplier
+                : minAccelMultiplier;
+            float rate = targetsInRange.Count > 0
+                ? accelRampRate
+                : accelDecayRate;
+
+            currentAccelMultiplier = Mathf.MoveTowards(
+                currentAccelMultiplier,
+                target,
+                rate * Time.deltaTime
+            );
+        }
 
         if (targetsInRange.Count > 0)
         {
@@ -147,9 +169,14 @@ public class Tower : MonoBehaviour
                         break;
 
                     case Attribute.accelerator:
+                        double finalDamage = damage * currentAccelMultiplier;
+                        enemy.TakeDamage(finalDamage);
                         break;
 
                     case Attribute.uplink:
+                        enemy.TakeDamage(damage);
+                        enemy.TakeDamage(damage);
+                        enemy.TakeDamage(damage);
                         break;
                 }
 
