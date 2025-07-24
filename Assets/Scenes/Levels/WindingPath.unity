@@ -14437,6 +14437,7 @@ GameObject:
   - component: {fileID: 1053592507}
   - component: {fileID: 1053592506}
   - component: {fileID: 1053592505}
+  - component: {fileID: 1053592508}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14487,7 +14488,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.7986358
+  orthographic size: 1.8818933
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14518,6 +14519,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053592508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053592504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &1054098712
 GameObject:
   m_ObjectHideFlags: 0
@@ -15814,9 +15831,9 @@ MonoBehaviour:
   - enemyPrefabs:
     - {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
     spawnTimer: 0
-    spawnInterval: 1
+    spawnInterval: 0.5
     currentWaveWeight: 0
-    totalWaveWeight: 5
+    totalWaveWeight: 10
     enemyCount: 0
   - enemyPrefabs:
     - {fileID: 5917505499455317916, guid: 730987cc3bc4d6343b6abe6c3f5f14c2, type: 3}
@@ -15852,6 +15869,20 @@ MonoBehaviour:
     spawnInterval: 1
     currentWaveWeight: 0
     totalWaveWeight: 60
+    enemyCount: 0
+  - enemyPrefabs:
+    - {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    currentWaveWeight: 0
+    totalWaveWeight: 40
+    enemyCount: 0
+  - enemyPrefabs:
+    - {fileID: 5082026461966343123, guid: d8ff8573a4b4d594789da52ec71b0270, type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.2
+    currentWaveWeight: 0
+    totalWaveWeight: 100
     enemyCount: 0
   - enemyPrefabs:
     - {fileID: 8846208906025915203, guid: 4b84c519e4576f34c904aa5fc6561982, type: 3}
