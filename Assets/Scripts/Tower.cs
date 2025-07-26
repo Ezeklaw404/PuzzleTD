@@ -31,6 +31,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private double fireRate;
     [SerializeField] private double damage;
     [SerializeField] private byte targetCount;
+    [SerializeField] private int cost;
     [Header("Beam Effect")]
     [SerializeField] private Material beamMaterial;
     [SerializeField] private float beamWidth;

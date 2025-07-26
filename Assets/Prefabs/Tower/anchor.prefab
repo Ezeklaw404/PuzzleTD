@@ -106,6 +106,7 @@ MonoBehaviour:
   fireRate: 15
   damage: 5
   targetCount: 100
+  cost: 650
   beamMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   beamWidth: 0.03
   beamDuration: 0.12

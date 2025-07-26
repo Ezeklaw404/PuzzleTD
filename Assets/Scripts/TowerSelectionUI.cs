@@ -1,70 +1,65 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
 using TMPro;
-using static System.Net.Mime.MediaTypeNames;
 
 public class TowerSelectionUI : MonoBehaviour
 {
-    [Tooltip("Parent RectTransform where buttons will be spawned")]
     [SerializeField] private RectTransform buttonContainer;
-
-    [Tooltip("A simple Button prefab with a Text child")]
-    [SerializeField] private Button buttonPrefab;
+    [SerializeField] private GameObject buttonPrefab;  // root has Button + TextMeshProUGUI child
 
     private Action<GameObject> onSelected;
-    /// <summary>
-    /// Call this to initialize the menu.
-    /// </summary>
+
     public void Show(List<GameObject> towerOptions, Action<GameObject> onSelectedCallback)
     {
-        Debug.Log($"[TowerSelectionUI] Show() called – towerOptions.Count = {towerOptions?.Count}");
-
         onSelected = onSelectedCallback;
 
-        // create one button per tower prefab
+        // clear old buttons
+        foreach (Transform t in buttonContainer)
+            Destroy(t.gameObject);
+
+        // helper to size a button to its TMP child
+        void SizeButton(GameObject go, float padX, float padY)
+        {
+            var tmp = go.GetComponentInChildren<TextMeshProUGUI>();
+            LayoutRebuilder.ForceRebuildLayoutImmediate(tmp.rectTransform);
+
+            float w = LayoutUtility.GetPreferredSize(tmp.rectTransform, 0);
+            float h = LayoutUtility.GetPreferredSize(tmp.rectTransform, 1);
+
+            var rt = go.GetComponent<RectTransform>();
+            rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, w + padX);
+            rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, h + padY);
+        }
+
+        // spawn a button per tower type
         foreach (var prefab in towerOptions)
         {
-            var btn = Instantiate(buttonPrefab, buttonContainer);
-            var txt = btn.GetComponentInChildren<TextMeshProUGUI>();
-            if (txt == null)
-            {
-                Debug.LogError("No TMP text component found on buttonPrefab!");
-            }
-            else
-            {
-                txt.text = prefab.name;
+            var btnGO = Instantiate(buttonPrefab, buttonContainer);
+            var btn = btnGO.GetComponent<Button>();
+            var tmp = btnGO.GetComponentInChildren<TextMeshProUGUI>();
 
-                // force the layout to rebuild so LayoutUtility can read the new preferred size
-                LayoutRebuilder.ForceRebuildLayoutImmediate(txt.rectTransform);
+            tmp.text = prefab.name;
+            SizeButton(btnGO, padX: 20f, padY: 10f);
 
-                // 2) Get preferred sizes
-                float textWidth = LayoutUtility.GetPreferredSize(txt.rectTransform, 0); // 0 = Horizontal
-                float textHeight = LayoutUtility.GetPreferredSize(txt.rectTransform, 1); // 1 = Vertical
-
-                // 3) Decide on padding around the text
-                float horizontalPadding = 20f;
-                float verticalPadding = 10f;
-
-                // 4) Apply to the button’s RectTransform
-                RectTransform btnRT = btn.GetComponent<RectTransform>();
-                btnRT.SetSizeWithCurrentAnchors(
-                    RectTransform.Axis.Horizontal,
-                    textWidth + horizontalPadding
-                );
-                btnRT.SetSizeWithCurrentAnchors(
-                    RectTransform.Axis.Vertical,
-                    textHeight + verticalPadding
-                );
-            }
-            btn.onClick.AddListener(() => Select(prefab));
+            btn.onClick.AddListener(() => {
+                onSelected?.Invoke(prefab);
+                Destroy(gameObject);
+            });
         }
-    }
 
-    private void Select(GameObject prefab)
-    {
-        onSelected?.Invoke(prefab);
-        Destroy(gameObject);
+        // spawn the Cancel button
+        var cancelGO = Instantiate(buttonPrefab, buttonContainer);
+        var cancelBtn = cancelGO.GetComponent<Button>();
+        var cancelTmp = cancelGO.GetComponentInChildren<TextMeshProUGUI>();
+
+        cancelTmp.text = "Cancel";
+        SizeButton(cancelGO, padX: 20f, padY: 10f);
+
+        cancelBtn.onClick.AddListener(() => {
+            onSelected?.Invoke(null);
+            Destroy(gameObject);
+        });
     }
 }

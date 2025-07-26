@@ -19,10 +19,7 @@ public class TowerPedestal : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // if already occupied, do nothing (or you could offer 'replace' logic)
-        if (currentTower != null) return;
-
-        if (towerPrefabs == null || towerPrefabs.Count == 0)
+        if (towerSelectionUIPrefab == null || towerPrefabs == null || towerPrefabs.Count == 0)
         {
             UnityEngine.Debug.LogWarning($"[{name}] No tower types configured!");
             return;
@@ -37,6 +34,9 @@ public class TowerPedestal : MonoBehaviour, IPointerClickHandler
     {
         if (towerPrefab == null) return;
 
+        if (currentTower != null)
+            Destroy(currentTower);
+
         // instantiate the chosen tower at our position
         currentTower = Instantiate(
             towerPrefab,
@@ -44,16 +44,6 @@ public class TowerPedestal : MonoBehaviour, IPointerClickHandler
             Quaternion.identity,
             transform   // parent to pedestal if you like
         );
-    }
-
-    // optional helper if you ever want to remove/swap the tower
-    public void RemoveTower()
-    {
-        if (currentTower != null)
-        {
-            Destroy(currentTower);
-            currentTower = null;
-        }
     }
 
     public bool HasTower => currentTower != null;
