@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 1
   attribute: 1
-  range: 3.6
-  fireRate: 15
+  range: 4
+  fireRate: 20
   damage: 5
   targetCount: 100
   cost: 650

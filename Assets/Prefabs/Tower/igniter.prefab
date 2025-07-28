@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 5
-  attrubite: 0
-  range: 3.6
-  fireRate: 60
-  damage: 2
+  attribute: 0
+  range: 5
+  fireRate: 70
+  damage: 3
   targetCount: 1
   cost: 400
   beamMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

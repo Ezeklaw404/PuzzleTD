@@ -103,7 +103,7 @@ MonoBehaviour:
   priority: 5
   attribute: 3
   range: 5
-  fireRate: 30
+  fireRate: 45
   damage: 10
   targetCount: 1
   cost: 2000

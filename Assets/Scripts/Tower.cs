@@ -182,43 +182,30 @@ public class Tower : MonoBehaviour
                         break;
                 }
 
-                StartCoroutine(DrawBeam(transform.position, enemyCollider.transform.position));
+                DrawBeam(transform.position, enemyCollider.transform.position);
             }
         }
     }
 
-    private IEnumerator DrawBeam(Vector3 from, Vector3 to)
+    private void DrawBeam(Vector3 from, Vector3 to)
     {
+        // 1) create the beam GO
         GameObject go = new GameObject("Beam");
-        var lr = go.AddComponent<LineRenderer>();
+        go.transform.position = Vector3.zero; // or wherever you like
 
+        // 2) add & configure LineRenderer
+        var lr = go.AddComponent<LineRenderer>();
         lr.positionCount = 2;
         lr.material = new Material(beamMaterial);
         lr.startWidth = beamWidth;
         lr.endWidth = beamWidth;
         lr.useWorldSpace = true;
-
         lr.SetPosition(0, from);
         lr.SetPosition(1, to);
-
         lr.sortingLayerName = "Foreground";
 
-        float elapsed = 0f;
-        Color baseColor = lr.material.color;
-        while (elapsed < beamDuration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / beamDuration);
-
-            float a = Mathf.Lerp(1f, 0f, t);
-            Color c = new Color(baseColor.r, baseColor.g, baseColor.b, a);
-            lr.startColor = c;
-            lr.endColor = c;
-
-            yield return null;
-        }
-
-        Destroy(go);
+        // 3) add the Beam script to handle fade+destroy
+        var beam = go.AddComponent<Beam>();
+        beam.duration = beamDuration;
     }
-
 }

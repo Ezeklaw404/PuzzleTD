@@ -103,8 +103,8 @@ MonoBehaviour:
   priority: 3
   attribute: 2
   range: 3.6
-  fireRate: 120
-  damage: 15
+  fireRate: 100
+  damage: 10
   targetCount: 1
   cost: 3250
   beamMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

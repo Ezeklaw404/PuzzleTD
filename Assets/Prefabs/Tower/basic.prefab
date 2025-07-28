@@ -102,9 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priority: 5
   attribute: 0
-  range: 3.3
-  fireRate: 45
-  damage: 1
+  range: 6
+  fireRate: 60
+  damage: 2
   targetCount: 1
   cost: 0
   beamMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
