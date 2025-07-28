@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,7 +12,12 @@ public class Enemy : MonoBehaviour
     public Transform[] waypoints;
     public int waypointIndex = 0;
 
-    
+    public static readonly List<Enemy> AllEnemies = new List<Enemy>();
+
+    void OnEnable() => AllEnemies.Add(this);
+    void OnDisable() => AllEnemies.Remove(this);
+
+    public static event Action<Enemy> OnDeath;
 
 
     public void InitPath(Transform[] path) {
@@ -23,6 +30,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            OnDeath?.Invoke(this);
             Destroy(gameObject);
         }
     }

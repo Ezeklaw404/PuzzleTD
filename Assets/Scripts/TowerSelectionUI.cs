@@ -1,43 +1,89 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 using System.Collections.Generic;
-using TMPro;
 
 public class TowerSelectionUI : MonoBehaviour
 {
-    [SerializeField] private RectTransform buttonContainer;  // with a HorizontalLayoutGroup on it
-    [SerializeField] private GameObject buttonPrefab;     // root has Button + TextMeshProUGUI child
+    [Header("References")]
+    [Tooltip("The RectTransform with the HorizontalLayoutGroup")]
+    [SerializeField] private RectTransform buttonContainer;
+
+    [Tooltip("A prefab whose root has a Button component and a TextMeshProUGUI child")]
+    [SerializeField] private GameObject buttonPrefab;
+
+    [Tooltip("Your PlayerUI script instance (for reading current Money)")]
+    [SerializeField] private Player  player;
 
     private Action<GameObject> onSelected;
+
+    // track each tower entry so we can update its interactable state
+    private class Entry
+    {
+        public Button btn;
+        public TextMeshProUGUI label;
+        public int cost;
+        public Color defaultColor;
+    }
+    private readonly List<Entry> entries = new();
+
+    void Awake()
+    {
+        player = Player.Instance;
+    }
+
+    void OnEnable()
+    {
+        if (player != null)
+            player.OnStatsChanged += RefreshAffordability;
+    }
+
+    void OnDisable()
+    {
+        if (player != null)
+            player.OnStatsChanged -= RefreshAffordability;
+    }
+
+    void RefreshAffordability()
+    {
+        if (entries.Count == 0 || player == null) return;
+
+        int money = player.Money;
+        foreach (var e in entries)
+        {
+            bool canAfford = money >= e.cost;
+            e.btn.interactable = canAfford;
+            e.label.color = canAfford ? e.defaultColor : Color.gray;
+        }
+    }
 
     public void Show(List<GameObject> towerOptions, Action<GameObject> onSelectedCallback)
     {
         onSelected = onSelectedCallback;
+        entries.Clear();
 
-        // Clear out any old entries
+        // clear any previous buttons
         foreach (Transform t in buttonContainer)
             Destroy(t.gameObject);
 
-        // Helper to size a button to its TMP child
-        void SizeButton(GameObject btnGO, float padX, float padY)
+        // helper to size a button to its TMP label
+        void SizeButton(GameObject go, float padX, float padY)
         {
-            var tmp = btnGO.GetComponentInChildren<TextMeshProUGUI>();
+            var tmp = go.GetComponentInChildren<TextMeshProUGUI>();
             LayoutRebuilder.ForceRebuildLayoutImmediate(tmp.rectTransform);
-
             float w = LayoutUtility.GetPreferredSize(tmp.rectTransform, 0);
             float h = LayoutUtility.GetPreferredSize(tmp.rectTransform, 1);
 
-            var rt = btnGO.GetComponent<RectTransform>();
+            var rt = go.GetComponent<RectTransform>();
             rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, w + padX);
             rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, h + padY);
         }
 
-        // Helper to create one “entry” with optional cost label
-        void CreateEntry(string label, Action clickAction, int? cost = null)
+        // helper to create each entry (tower or cancel)
+        void CreateEntry(string text, Action clickAction, int? cost = null)
         {
-            // 1) Wrapper with VerticalLayoutGroup + ContentSizeFitter
-            var entryGO = new GameObject(label + "Entry", typeof(RectTransform));
+            var entryGO = new GameObject(text + "Entry", typeof(RectTransform));
             entryGO.transform.SetParent(buttonContainer, false);
 
             var vlg = entryGO.AddComponent<VerticalLayoutGroup>();
@@ -51,51 +97,59 @@ public class TowerSelectionUI : MonoBehaviour
             csf.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
             csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
-            // 2) The button itself
-            var btnGO = Instantiate(buttonPrefab, entryGO.transform);
+            // button
+            var btnGO = Instantiate(buttonPrefab, entryGO.transform, false);
             var btn = btnGO.GetComponent<Button>();
             var tmp = btnGO.GetComponentInChildren<TextMeshProUGUI>();
-
-            tmp.text = label;
+            tmp.text = text;
             SizeButton(btnGO, padX: 20f, padY: 10f);
 
-            btn.onClick.AddListener(() => {
-                clickAction();
-                Destroy(gameObject);
-            });
-
-            // 3) Optional cost label under the button
+            // if this is a tower (cost != null), set interactable based on current money
             if (cost.HasValue)
             {
-                var costGO = new GameObject("CostLabel", typeof(RectTransform));
-                costGO.transform.SetParent(entryGO.transform, false);
+                int c = cost.Value;
+                bool canAfford = player.Money >= c;
 
-                var costTMP = costGO.AddComponent<TextMeshProUGUI>();
-                costTMP.alignment = TextAlignmentOptions.Center;
-                costTMP.fontSize = tmp.fontSize * 0.8f;
-                costTMP.text = $"Cost: {cost.Value}";
+                // track it for dynamic updates
+                entries.Add(new Entry
+                {
+                    btn = btn,
+                    label = tmp,
+                    cost = cost.Value,
+                    defaultColor = tmp.color
+                });
 
-                var costCSF = costGO.AddComponent<ContentSizeFitter>();
-                costCSF.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
-                costCSF.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                // only hook up click if affordable right now
+                btn.interactable = canAfford;
+                if (!canAfford) tmp.color = Color.gray;
+                btn.onClick.AddListener(() => { clickAction(); Destroy(gameObject); });
+            }
+            else
+            {
+                // this is the Cancel entry
+                btn.onClick.AddListener(() => { clickAction(); Destroy(gameObject); });
             }
         }
 
-        // 4) Create one entry per tower type
+        // build one entry per tower
         foreach (var prefab in towerOptions)
         {
-            int cost = prefab.GetComponent<Tower>().Cost;
+            int c = prefab.GetComponent<Tower>().Cost;
             CreateEntry(
-                label: prefab.name,
-                clickAction: () => onSelected?.Invoke(prefab),
-                cost: prefab.GetComponent<Tower>().Cost
+                text: prefab.name,
+                clickAction: () => 
+                {
+                    player.Purchase(c);
+                    onSelected(prefab);
+                },
+                cost: c
             );
         }
 
-        // 5) Finally, a Cancel entry (no cost)
+        // and finally a Cancel entry
         CreateEntry(
-            label: "Cancel",
-            clickAction: () => onSelected?.Invoke(null),
+            text: "Cancel",
+            clickAction: () => onSelected(null),
             cost: null
         );
     }

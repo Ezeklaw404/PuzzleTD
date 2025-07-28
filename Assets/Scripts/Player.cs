@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
-    [SerializeField] private int health = 100;
-    [SerializeField] private int money = 100;
+    [SerializeField] private int health;
+    [SerializeField] private int money;
     private bool alive = true;
 
     public event Action OnStatsChanged;
@@ -25,8 +25,21 @@ public class Player : MonoBehaviour
     private Label healthLabel;
     private Label moneyLabel;
 
-    
-    
+    void OnEnable()
+    {
+        Enemy.OnDeath += HandleEnemyDeath;
+    }
+
+    void OnDisable()
+    {
+        Enemy.OnDeath -= HandleEnemyDeath;
+    }
+
+    private void HandleEnemyDeath(Enemy dead)
+    {
+        AddMoney(dead.difficultyWeight * 10);
+    }
+
     private void Start()
     {
         var uiDoc = FindFirstObjectByType<UIDocument>();
