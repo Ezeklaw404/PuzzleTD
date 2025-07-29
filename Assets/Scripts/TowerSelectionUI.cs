@@ -119,6 +119,17 @@ public class TowerSelectionUI : MonoBehaviour
                     defaultColor = tmp.color
                 });
 
+                var costGO = new GameObject("CostLabel", typeof(RectTransform));
+                costGO.transform.SetParent(entryGO.transform, false);
+                var costTMP = costGO.AddComponent<TextMeshProUGUI>();
+                costTMP.alignment = TextAlignmentOptions.Center;
+                costTMP.fontSize = tmp.fontSize * 0.8f;  // slightly smaller
+                costTMP.text = $"Cost: {cost}";
+                // let it size itself
+                var costCSF = costGO.AddComponent<ContentSizeFitter>();
+                costCSF.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+                costCSF.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
                 // only hook up click if affordable right now
                 btn.interactable = canAfford;
                 if (!canAfford) tmp.color = Color.gray;
