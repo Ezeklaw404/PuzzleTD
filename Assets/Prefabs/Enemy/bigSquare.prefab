@@ -80,6 +80,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -500102071
       objectReference: {fileID: 0}
+    - target: {fileID: 7814139039558186327, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+      propertyPath: health
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814139039558186327, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
+      propertyPath: difficultyWeight
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
