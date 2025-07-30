@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public double health;
     [SerializeField] public float moveSpeed = 1;
     [SerializeField] private int difficultyWeight = 1;
+    public bool preserveSpawnPosition = false;
 
     [SerializeField]
     public Transform[] waypoints;
@@ -30,8 +31,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            OnDeath?.Invoke(this);
-            Destroy(gameObject);
+            EnemyDie();
         }
     }
 
@@ -42,7 +42,11 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        transform.position = waypoints[waypointIndex].transform.position;
+
+        if (!preserveSpawnPosition)
+        { 
+            transform.position = waypoints[waypointIndex].transform.position;
+        }
     }
 
 
@@ -73,6 +77,12 @@ public class Enemy : MonoBehaviour
                 waypointIndex += 1;
             }
         }
+    }
+
+    virtual protected void EnemyDie()
+    {
+        OnDeath?.Invoke(this);
+        Destroy(gameObject);
     }
 
     void OnCollisionStay2D(Collision2D collision) 
