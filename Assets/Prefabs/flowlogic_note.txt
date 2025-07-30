@@ -1,0 +1,4 @@
+I was attempting to adapt from this online project https://github.com/zerefgd/Connect to get it working not only in the modern unity version, but also to have it generate on a more on-demand basis. 
+
+My plan was to have the user select to open a flow puzzle and be presented with a randomly selected/generated board. They would have the option to forfeit the reward or solve the puzzle.
+The procedural generation script was designed to randomly place nodes of different colors on the board and then make sure the pattern was capable of being solved. 
