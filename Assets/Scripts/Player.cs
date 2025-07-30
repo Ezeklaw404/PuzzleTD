@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     private Label healthLabel;
     private Label moneyLabel;
+    private Label waveLabel;
+
+    private EnemySpawner enemySpawner;
 
     void OnEnable()
     {
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
 
     private void HandleEnemyDeath(Enemy dead)
     {
-        AddMoney(dead.difficultyWeight * 10);
+        AddMoney(dead.GetWeight() * 10);
     }
 
     private void Start()
@@ -49,18 +52,24 @@ public class Player : MonoBehaviour
             var root = uiDoc.rootVisualElement;
             healthLabel = root.Q<Label>("Health");
             moneyLabel = root.Q<Label>("Money");
+            waveLabel = root.Q<Label>("Wave");
+
+            enemySpawner = FindFirstObjectByType<EnemySpawner>();
 
             UpdateUI();
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (healthLabel != null)
-            healthLabel.text = "Health: " + health;
+            healthLabel.text = $"Health: {health}";
 
         if (moneyLabel != null)
-            moneyLabel.text = "Money: $" + money;
+            moneyLabel.text = $"Money: ${money}";
+
+        if (waveLabel != null)
+            waveLabel.text = $"Wave: { enemySpawner.GetWaveNumber() + 1}";
     }
 
 

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] public double health;
     [SerializeField] public float moveSpeed = 1;
-    [SerializeField] public int difficultyWeight = 1;
+    [SerializeField] private int difficultyWeight = 1;
 
     [SerializeField]
     public Transform[] waypoints;
@@ -33,6 +33,11 @@ public class Enemy : MonoBehaviour
             OnDeath?.Invoke(this);
             Destroy(gameObject);
         }
+    }
+
+    public int GetWeight()
+    {
+        return difficultyWeight;
     }
 
     private void Start()

@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public class Wave
     {
         public GameObject[] enemyPrefabs;
+        public bool waveOver;
         public float spawnTimer;
         public float spawnInterval;
         public int currentWaveWeight;
@@ -20,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     public List<Wave> waves;
     public int waveNumber;
 
+    public int GetWaveNumber() { return waveNumber; }
 
     void Update()
     {
@@ -27,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             return;
 
         waves[waveNumber].spawnTimer += Time.deltaTime;
-        if (waves[waveNumber].totalWaveWeight > waves[waveNumber].currentWaveWeight)
+        if (waves[waveNumber].totalWaveWeight > waves[waveNumber].currentWaveWeight && !waves[waveNumber].waveOver)
         {
 
             if (waves[waveNumber].spawnTimer >= waves[waveNumber].spawnInterval)
@@ -35,12 +37,15 @@ public class EnemySpawner : MonoBehaviour
                 waves[waveNumber].spawnTimer = 0;
                 SpawnEnemy();
             }
-        } else
+        }
+        else
         {
 
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0 && waveNumber <= waves.Count -1)
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0 && waveNumber <= waves.Count - 1)
             {
+                waves[waveNumber].waveOver = true;
                 waveNumber++;
+                Player.Instance.UpdateUI();
             }
         }
 
@@ -51,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         int randEnemyIndex = DetermineEnemiesByWeight();
+        if (randEnemyIndex < 0) return;
         GameObject shape = Instantiate(waves[waveNumber].enemyPrefabs[randEnemyIndex],
             transform.position, transform.rotation);
 
@@ -66,14 +72,29 @@ public class EnemySpawner : MonoBehaviour
 
     private int DetermineEnemiesByWeight()
     {
-        int spawnIndex = 0;
+        int spawnIndex = -1;
         int weight;
-        int length = waves[waveNumber].enemyPrefabs.Length;
-
-        while (true)
+        int enemyPrefabCount = waves[waveNumber].enemyPrefabs.Length;
+        bool extraWeight = false;
+        for (int i = 0; i < enemyPrefabCount; i++)
         {
-            spawnIndex = Random.Range(0, length);
-            weight = waves[waveNumber].enemyPrefabs[spawnIndex].GetComponent<Enemy>().difficultyWeight;
+            int weightOverflow = 0;
+            weightOverflow = (waves[waveNumber].enemyPrefabs[i].GetComponent<Enemy>().GetWeight() + waves[waveNumber].currentWaveWeight);
+            if (weightOverflow <= waves[waveNumber].totalWaveWeight)
+            {
+                extraWeight = true;
+                break;
+            }
+        }
+        if (!extraWeight) 
+        { 
+            waves[waveNumber].waveOver = true;
+        }
+
+        while (!waves[waveNumber].waveOver)
+        {
+            spawnIndex = Random.Range(0, enemyPrefabCount);
+            weight = waves[waveNumber].enemyPrefabs[spawnIndex].GetComponent<Enemy>().GetWeight();
 
             if ((waves[waveNumber].currentWaveWeight + weight) <= waves[waveNumber].totalWaveWeight)
             {
