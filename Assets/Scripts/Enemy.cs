@@ -91,9 +91,9 @@ public class Enemy : MonoBehaviour
         {
             if (Player.Instance != null)
             {
-                int dmg = difficultyWeight / 2;
-                if (dmg < 1) dmg = 1;
-                Player.Instance.Yeouch(dmg);
+                //int dmg = difficultyWeight / 2;
+                //if (dmg < 1) dmg = 1;
+                Player.Instance.Yeouch(GetWeight());
             }
             Destroy(gameObject);
         }
