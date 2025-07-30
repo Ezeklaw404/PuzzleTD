@@ -107,8 +107,10 @@ MonoBehaviour:
   health: 15
   moveSpeed: 0.75
   difficultyWeight: 8
+  preserveSpawnPosition: 0
   waypoints: []
   waypointIndex: 0
+  enemyPrefab: {fileID: 6939688240952419672, guid: 1abb42f1810b06f408574a3b572a2e19, type: 3}
 --- !u!114 &534179552903228314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +126,7 @@ MonoBehaviour:
   health: 15
   moveSpeed: 1.5
   difficultyWeight: 8
+  preserveSpawnPosition: 0
   waypoints: []
   waypointIndex: 0
 --- !u!70 &5167044814025343806

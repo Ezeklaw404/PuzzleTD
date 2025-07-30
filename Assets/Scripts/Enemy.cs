@@ -40,6 +40,16 @@ public class Enemy : MonoBehaviour
         return difficultyWeight;
     }
 
+    public double GetHealth()
+    {
+        return health;
+    }
+
+    public void SetWeight(int weight)
+    {
+        difficultyWeight = weight;
+    }
+
     private void Start()
     {
 
