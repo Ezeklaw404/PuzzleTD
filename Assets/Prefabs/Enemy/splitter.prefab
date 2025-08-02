@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1830985046670534475}
   - component: {fileID: 8849354323143529658}
   - component: {fileID: 1277031916233621414}
-  - component: {fileID: 534179552903228314}
   - component: {fileID: 5167044814025343806}
   - component: {fileID: 7084656397529373553}
   m_Layer: 3
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: -500102071
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -488248382649040768, guid: 3bf092876dbe6614ea9b2ac7a362a12c, type: 3}
+  m_Sprite: {fileID: -8166966530815011495, guid: 3bf092876dbe6614ea9b2ac7a362a12c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,31 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e51f42cebf81e439c73d99b7a05153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 12
   moveSpeed: 0.75
-  difficultyWeight: 8
+  difficultyWeight: 5
   preserveSpawnPosition: 0
   waypoints: []
   waypointIndex: 0
-  enemyPrefab: {fileID: 6939688240952419672, guid: 1abb42f1810b06f408574a3b572a2e19, type: 3}
---- !u!114 &534179552903228314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6939688240952419672}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0a92db6252eef47b7a6ce2a960c862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 15
-  moveSpeed: 1.5
-  difficultyWeight: 8
-  preserveSpawnPosition: 0
-  waypoints: []
-  waypointIndex: 0
+  enemyPrefab: {fileID: 6903341534390621918, guid: 8f26def7baabb3c4abcaf52aaac5f3b6, type: 3}
 --- !u!70 &5167044814025343806
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

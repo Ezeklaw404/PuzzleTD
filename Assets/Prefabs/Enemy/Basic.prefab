@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6977816342158408272}
   - component: {fileID: 6476785947416721126}
   m_Layer: 3
-  m_Name: Basic
+  m_Name: basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   moveSpeed: 1
-  difficultyWeight: 1
+  difficultyWeight: 2
+  preserveSpawnPosition: 0
   waypoints: []
   waypointIndex: 0
 --- !u!61 &6977816342158408272

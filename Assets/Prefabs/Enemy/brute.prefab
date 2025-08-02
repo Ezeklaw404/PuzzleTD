@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6384693690770754426}
   - component: {fileID: 8359319804035399011}
   m_Layer: 3
-  m_Name: Tank
+  m_Name: brute
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: -500102071
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8166966530815011495, guid: 3bf092876dbe6614ea9b2ac7a362a12c, type: 3}
+  m_Sprite: {fileID: -488248382649040768, guid: 3bf092876dbe6614ea9b2ac7a362a12c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,9 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0a92db6252eef47b7a6ce2a960c862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  moveSpeed: 0.4
-  difficultyWeight: 3
+  health: 20
+  moveSpeed: 1.5
+  difficultyWeight: 8
+  preserveSpawnPosition: 0
   waypoints: []
   waypointIndex: 0
 --- !u!70 &-6384693690770754426

@@ -23,20 +23,20 @@ public class Splitter : Enemy
         // Configure enemy1
         var script1 = enemy1.GetComponent<Enemy>();
         script1.preserveSpawnPosition = true;
-        script1.health = script1.GetHealth();
-        script1.moveSpeed = moveSpeed;
+        ////script1.health = script1.GetHealth();
+        ////script1.moveSpeed = moveSpeed;
         script1.waypoints = waypoints;
         script1.waypointIndex = waypointIndex;
-        script1.SetWeight(script1.GetWeight());
+        ////script1.SetWeight(script1.GetWeight());
 
-        // Configure enemy2
+        //// Configure enemy2
         var script2 = enemy2.GetComponent<Enemy>();
         script2.preserveSpawnPosition = true;
-        script2.health = script2.GetHealth();
-        script2.moveSpeed = moveSpeed;
+        //script2.health = script2.GetHealth();
+        //script2.moveSpeed = moveSpeed;
         script2.waypoints = waypoints;
         script2.waypointIndex = waypointIndex;
-        script2.SetWeight(script2.GetWeight());
+        //script2.SetWeight(script2.GetWeight());
         base.EnemyDie();
     }
 }

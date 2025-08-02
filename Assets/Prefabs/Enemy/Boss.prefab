@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3352735846226977896, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: m_Name
-      value: Basic Strong
+      value: boss
       objectReference: {fileID: 0}
     - target: {fileID: 6677310501066706396, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: m_SortingLayer
@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814139039558186327, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: health
-      value: 250
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7814139039558186327, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: moveSpeed
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814139039558186327, guid: 7b05925e4470bde41874e27e04df9bc4, type: 3}
       propertyPath: difficultyWeight
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
